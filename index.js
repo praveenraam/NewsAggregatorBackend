@@ -18,8 +18,15 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'https://newsaggregatorproai.netlify.app', 
-  credentials: true
+  origin: (origin, callback) => {
+    const allowedOrigins = ['https://newsaggregatorproai.netlify.app'];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
 }));
 app.use(bodyParser.json());
 

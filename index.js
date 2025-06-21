@@ -18,7 +18,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', 
+  origin: 'https://newsaggregatorproai.netlify.app/login', 
   credentials: true
 }));
 app.use(bodyParser.json());
@@ -31,5 +31,5 @@ app.use('/api/user', userRoutes);
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on ${PORT}`);
 });

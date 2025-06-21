@@ -18,7 +18,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'https://newsaggregatorproai.netlify.app/login', 
+  origin: 'https://newsaggregatorproai.netlify.app', 
   credentials: true
 }));
 app.use(bodyParser.json());
